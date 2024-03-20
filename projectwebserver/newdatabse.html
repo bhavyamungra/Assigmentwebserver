@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAMP Documentation</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+
+<body id = "g-index">
+    <header id = "index-header">
+        <h1>How to add New Database in MYSQL.</h1>
+    </header>
+    <nav id="g-nav"> 
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Apache.html">Apache</a></li>
+            <li><a href="PHP.html">PHP</a></li>
+            <li><a href="vhostconf.html">Confi Vhost</a></li>
+            <li><a href="lampstack.html">LAMP Stack</a></li>
+        </ul>
+    </nav>
+    <nav id="nav-sql">
+        <ul>
+            <li><a href="newuser.html">NEW USER </a></li>
+            <li><a href="sql.html">MY SQL </a></li>
+        </ul>
+    </nav>
+
+    <main id="mysql-steps">
+        <section id="step-1">
+            <h2 class="step-title">Step 1: Log in to MySQL</h2>
+            <p>Log in to the MySQL server as the root user:</p>
+            <pre><code class="command">mysql -u root -p</code></pre>
+            <p>Enter the root password when prompted.</p>
+        </section>
+    
+        <section id="step-2">
+            <h2 class="step-title">Step 2: Create a New Database</h2>
+            <p>Use the following SQL query to create a new MySQL database:</p>
+            <pre><code class="sql-query">CREATE DATABASE dbname;</code></pre>
+            <p>Replace 'dbname' with the desired name of the new database.</p>
+        </section>
+    
+        <section id="step-3">
+            <h2 class="step-title">Step 3: Grant User Permission to the Database</h2>
+            <p>Grant appropriate privileges to the user for the new database. For example, to grant all privileges on the new database to the user:</p>
+            <pre><code class="sql-query">GRANT ALL PRIVILEGES ON dbname.* TO 'username'@'localhost';</code></pre>
+            <p>Replace 'dbname' with the name of the new database and 'username' with the username of the user.</p>
+        </section>
+    
+        <section id="step-4">
+            <h2 class="step-title">Step 4: Flush Privileges</h2>
+            <p>Flush the privileges to apply the changes:</p>
+            <pre><code class="command">FLUSH PRIVILEGES;</code></pre>
+        </section>
+    
+        <section id="step-5">
+            <h2 class="step-title">Step 5: Exit MySQL</h2>
+            <p>Exit the MySQL prompt:</p>
+            <pre><code class="command">exit;</code></pre>
+        </section>
+    </main>
+    
+
+   
+</body>
+</html>

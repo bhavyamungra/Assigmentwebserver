@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Install MySQL</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+
+<body id="sql-body">
+    <header id="index-header">
+        <h1>How to Install MySQL</h1>
+    </header>
+    <nav id="g-nav"> 
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Apache.html">Apache</a></li>
+            <li><a href="PHP.html">PHP</a></li>
+            <li><a href="vhostconf.html">Confi Vhost</a></li>
+            <li><a href="lampstack.html">LAMP Stack</a></li>
+        </ul>
+    </nav>
+    <nav id="nav-sql">
+        <ul>
+            <li><a href="newuser.html">NEW USER </a></li>
+            <li><a href="newdatabse.html">NEW DATABASE </a></li>
+        </ul>
+    </nav>
+    <main class="sql-content">
+        <section id="update-package-index">
+            <h2>Step 1: Update Package Index</h2>
+            <p>First, ensure that the local package index is up-to-date by running:</p>
+            <pre><code>sudo apt update</code></pre>
+        </section>
+    
+        <section id="install-mysql-server">
+            <h2>Step 2: Install MySQL Server</h2>
+            <p>Use the following command to install the MySQL server:</p>
+            <pre><code>sudo apt install mysql-server</code></pre>
+        </section>
+    
+        <section id="secure-mysql-installation">
+            <h2>Step 3: Secure MySQL Installation</h2>
+            <p>After installation, run the security script that comes with MySQL to secure the installation:</p>
+            <pre><code>sudo mysql_secure_installation</code></pre>
+            <p>Follow the on-screen prompts to configure the security options for your MySQL installation.</p>
+        </section>
+    
+        <section id="verify-mysql-installation">
+            <h2>Step 4: Verify MySQL Installation</h2>
+            <p>After securing the installation, you can verify that MySQL is running correctly by checking its status:</p>
+            <pre><code>sudo systemctl status mysql</code></pre>
+            <p>This command should display the status of the MySQL service, indicating whether it is active or not.</p>
+        </section>
+    </main>
+  </body>
+</html>
+    

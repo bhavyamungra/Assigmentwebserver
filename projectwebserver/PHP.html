@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Install PHP v8.2</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <header id="index-header">
+        <h1>How to Install PHP v8.2</h1>
+    </header>
+    <nav id="g-nav"> 
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Apache.html">Apache</a></li>
+            <li><a href="sql.html">MySQL</a></li>
+            <li><a href="vhostconf.html">Confi Vhost</a></li>
+            <li><a href="lampstack.html">LAMP Stack</a></li>
+        </ul>
+    </nav>
+
+    <main id="main-content">
+        <section id="add-php-repo" class="installation-step">
+            <h2>Step 1: Add PHP Repository</h2>
+            <p>Add the ondrej/php repository to your system by running the following commands:</p>
+            <pre><code>sudo apt install software-properties-common
+sudo add-apt-repository ppa:ondrej/php
+sudo apt update</code></pre>
+        </section>
+
+        <section id="install-php" class="installation-step">
+            <h2>Step 2: Install PHP v8.2</h2>
+            <p>Install PHP v8.2 and its required dependencies:</p>
+            <pre><code>sudo apt install php8.2 php8.2-cli php8.2-common</code></pre>
+        </section>
+
+        <section id="verify-php-installation" class="installation-step">
+            <h2>Step 3: Verify PHP Installation</h2>
+            <p>After installation, verify that PHP v8.2 is installed correctly by running:</p>
+            <pre><code>php -v</code></pre>
+            <p>This command should display the installed PHP version.</p>
+        </section>
+    </main>
+</body>
+
+</html>

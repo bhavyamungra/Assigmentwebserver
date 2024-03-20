@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Test Your LAMP Stack</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <header id="index-header">
+        <h1>How to Test Your LAMP Stack</h1>
+    </header>
+
+    <nav id="g-nav"> 
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Apache.html">Apache</a></li>
+            <li><a href="PHP.html">PHP</a></li>
+            <li><a href="sql.html">MY SQL</a></li>
+            <li><a href="vhostconf.html">confi VHOST</a></li>
+        </ul>
+    </nav>
+
+    <main id="lamp-setup-steps">
+        <section class="lamp-step">
+            <h2 class="step-title-lamp">Step 1: Create a PHP Info File</h2>
+            <p>Create a new PHP file with the following content:</p>
+            <pre><code class="code-block">&lt;?php
+    phpinfo();
+    ?&gt;</code></pre>
+            <p>Save this file as <code class="code-inline">info.php</code> in the document root of your Apache web server (typically <code class="code-inline">/var/www/html/</code>).</p>
+        </section>
+    
+        <section class="lamp-step">
+            <h2 class="step-title">Step 2: Access the PHP Info File</h2>
+            <p>Open your web browser and navigate to <code class="code-inline">http://your_server_ip/info.php</code>, replacing <code class="code-inline">your_server_ip</code> with the IP address or domain name of your server.</p>
+        </section>
+    
+        <section class="lamp-step">
+            <h2 class="step-title">Step 3: Verify LAMP Stack Components</h2>
+            <p>If your LAMP stack is configured correctly, you should see a page displaying detailed information about your PHP installation.</p>
+            <p>This page confirms that Apache is working properly, PHP is installed and configured correctly, and your server can serve PHP files.</p>
+        </section>
+    
+        <section class="lamp-step">
+            <h2 class="step-title">Step 4: Delete the PHP Info File (Optional)</h2>
+            <p>For security reasons, it's recommended to delete the <code class="code-inline">info.php</code> file after testing your LAMP stack:</p>
+            <pre><code class="code-block">sudo rm /var/www/html/info.php</code></pre>
+        </section>
+    </main>
+    
+   
+</body>
+
+</html>

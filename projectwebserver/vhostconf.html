@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Configure a Vhost in Apache</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body id="vbody">
+    <header id="index-header">
+        <h1>How to Configure a Vhost in Apache</h1>    
+    </header>
+    <nav id="g-nav"> 
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Apache.html">Apache</a></li>
+            <li><a href="PHP.html">PHP</a></li>
+            <li><a href="sql.html">MY SQL</a></li>
+            <li><a href="lampstack.html">LAMP Stack</a></li>
+        </ul>
+    </nav>
+
+    <main id="apache-configuration-steps">
+        <section id="vhost-step-1">
+            <h2 class="step-title">Step 1: Create a New Configuration File</h2>
+            <p>Create a new configuration file for your virtual host in the Apache <code class="code-inline">sites-available</code> directory. You can use the following command to create the file:</p>
+            <pre><code class="code-block">sudo nano /etc/apache2/sites-available/example.com.conf</code></pre>
+            <p>Replace <code class="code-inline">example.com.conf</code> with your desired domain name.</p>
+        </section>
+    
+        <section id="vhost-step-2">
+            <h2 class="step-title">Step 2: Configure the Virtual Host</h2>
+            <p>Inside the configuration file, add the following configuration:</p>
+            <pre><code class="code-block">&lt;VirtualHost *:80&gt;
+                ServerAdmin webmaster@example.com
+                ServerName example.com
+                ServerAlias www.example.com
+                DocumentRoot /var/www/example.com/public_html
+                ErrorLog ${APACHE_LOG_DIR}/error.log
+                CustomLog ${APACHE_LOG_DIR}/access.log combined
+&lt;/VirtualHost&gt;</code></pre>
+            <p>Modify the <code class="code-inline">ServerName</code>, <code class="code-inline">ServerAlias</code>, and <code class="code-inline">DocumentRoot</code> directives as needed for your specific domain and file paths.</p>
+        </section>
+    
+        <section id="vhost-step-3">
+            <h2 class="step-title">Step 3: Enable the Virtual Host</h2>
+            <p>Enable the virtual host configuration by creating a symbolic link from the <code class="code-inline">sites-available</code> directory to the <code class="code-inline">sites-enabled</code> directory:</p>
+            <pre><code class="code-block">sudo ln -s /etc/apache2/sites-available/example.com.conf /etc/apache2/sites-enabled/</code></pre>
+        </section>
+    
+        <section id="vhost-step-4">
+            <h2 class="step-title">Step 4: Restart Apache</h2>
+            <p>Restart the Apache web server to apply the changes:</p>
+            <pre><code class="code-block">sudo systemctl restart apache2</code></pre>
+        </section>
+    
+        <section id="vhost-step-5">
+            <h2 class="step-title">Step 5: Verify Configuration</h2>
+            <p>Open your web browser and navigate to your domain name (<code class="code-inline">http://example.com</code>). If the virtual host is configured correctly, you should see the content from the specified <code class="code-inline">DocumentRoot</code> directory.</p>
+        </section>
+    </main>
+    
+
+
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add a New User to MySQL</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <header id="index-header">
+        <h1>Add a New User to MySQL</h1>
+    </header>
+    <nav id="g-nav"> 
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Apache.html">Apache</a></li>
+            <li><a href="PHP.html">PHP</a></li>
+            <li><a href="vhostconf.html">Confi Vhost</a></li>
+            <li><a href="lampstack.html">LAMP Stack</a></li>
+        </ul>
+    </nav>
+    <nav id="nav-sql">
+        <ul>
+            <li><a href="sql.html">MY SQL</a></li>
+            <li><a href="newdatabse.html">NEW DATABASE </a></li>
+        </ul>
+    </nav> 
+    <main id="new-content">
+        <section id="login-to-mysql">
+            <h2>Step 1: Log in to MySQL</h2>
+            <p>Log in to the MySQL server as the root user:</p>
+            <pre><code>mysql -u root -p</code></pre>
+            <p>Enter the root password when prompted.</p>
+        </section>
+    
+        <section id="create-new-mysql-user">
+            <h2>Step 2: Create a New MySQL User</h2>
+            <p>Use the following SQL query to create a new MySQL user:</p>
+            <pre><code>CREATE USER 'newuser'@'localhost' IDENTIFIED BY 'password';</code></pre>
+            <p>Replace 'newuser' with the desired username and 'password' with the desired password.</p>
+        </section>
+    
+        <section id="grant-privileges-to-new-user">
+            <h2>Step 3: Grant Privileges to the New User</h2>
+            <p>Grant appropriate privileges to the new user. For example, to grant all privileges on all databases:</p>
+            <pre><code>GRANT ALL PRIVILEGES ON *.* TO 'newuser'@'localhost' WITH GRANT OPTION;</code></pre>
+        </section>
+    
+        <section id="flush-privileges">
+            <h2>Step 4: Flush Privileges</h2>
+            <p>Flush the privileges to apply the changes:</p>
+            <pre><code>FLUSH PRIVILEGES;</code></pre>
+        </section>
+    
+        <section id="exit-mysql">
+            <h2>Step 5: Exit MySQL</h2>
+            <p>Exit the MySQL prompt:</p>
+            <pre><code>exit;</code></pre>
+        </section>
+    </main>
+
+</body>
+</html>
+    
